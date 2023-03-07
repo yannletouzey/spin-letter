@@ -1,0 +1,38 @@
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+/* LOGO */
+.containerLogoPerspective{
+    --size-box: 50px;
+    width: var(--size-box);
+    height: var(--size-box);
+    perspective: 1000px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.containerLogo3D{
+    width: var(--size-box);
+    height: var(--size-box);
+	position: absolute;
+	transform-style: preserve-3d;
+    transform: rotateY(-90deg) translateZ(0.001px);
+}
+.containerLogo{
+	position: absolute;
+    animation: spinLetter 1s infinite linear alternate;
+	text-align: center;
+    line-height: var(--size-box);
+    font-size: var(--size-box);
+}
+@keyframes spinLetter{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(180deg);
+	}
+}
